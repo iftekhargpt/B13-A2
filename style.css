@@ -117,7 +117,6 @@ header {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* Added transition for smooth 360 rotation */
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -125,11 +124,10 @@ header {
     position: absolute;
     width: 130px;
     z-index: 3;
-    /* Added transition for smooth 360 rotation */
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Updated to 360 degrees */
+/* 360 Rotation for Hero */
 .hero-image:hover .circle-img,
 .hero-image:hover .mic-icon {
     transform: rotate(360deg);
@@ -250,17 +248,32 @@ header {
     gap: 24px;
 }
 
+/* FEATURE CARD BASE & HOVER */
 .feature-card {
     background: #2A1B3D;
     padding: 40px;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
+    /* Added transition for smooth hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(217, 56, 249, 0.2);
+    background: #35234d;
 }
 
 .feature-card img {
     width: 48px;
     margin-bottom: 24px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover img {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
 
 .feature-card h3 {
@@ -296,10 +309,19 @@ header {
     gap: 25px;
 }
 
+/* EPISODE CARD BASE & HOVER */
 .episode-card {
     background: #2A1B3D;
     border-radius: 15px;
     overflow: hidden;
+    /* Added transition for smooth hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.episode-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(217, 56, 249, 0.15);
 }
 
 .video-frame {
